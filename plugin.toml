@@ -1,0 +1,44 @@
+[plugin]
+id = "instant_memo"
+name = "速记备忘录"
+description = "AI 自我备忘录与主动定时提醒：状态备忘有效期内注入模型上下文；单次/每日/工作日/间隔计划到点后由 AI 主动提醒。"
+short_description = "AI 自我备忘录 · 定时提醒 · 周期计划"
+keywords = ["备忘", "memo", "提醒", "remind", "定时", "schedule", "状态", "人设", "计划", "备忘录", "リマインダー", "напоминани"]
+version = "0.2.0"
+type = "plugin"
+entry = "plugin.plugins.instant_memo:InstantMemoPlugin"
+
+[plugin.author]
+name = "ATRIntelligence"
+
+[plugin.sdk]
+recommended = ">=0.1.0,<0.2.0"
+supported = ">=0.1.0,<0.3.0"
+
+[plugin.i18n]
+default_locale = "zh-CN"
+locales_dir = "i18n"
+
+[plugin_runtime]
+enabled = true
+auto_start = false
+
+[plugin.store]
+enabled = true
+
+[plugin.ui]
+enabled = true
+
+[[plugin.ui.panel]]
+id = "main"
+title = "速记备忘录"
+entry = "ui/panel.tsx"
+context = "main"
+permissions = ["state:read", "action:call"]
+
+[instant_memo]
+check_interval_seconds = 15
+max_status_memos = 50
+max_tasks = 50
+ai_allow_write = true
+ai_allow_delete = true
