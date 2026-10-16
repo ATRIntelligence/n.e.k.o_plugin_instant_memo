@@ -1,0 +1,41 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "N.E.K.O: check instant_memo",
+      "type": "shell",
+      "command": "uv run neko-plugin check \"${workspaceFolder}\"",
+      "options": {
+        "cwd": "${config:nekoPlugin.repoRoot}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "N.E.K.O: sync instant_memo",
+      "type": "shell",
+      "command": "uv run neko-plugin sync \"${workspaceFolder}\" --clean",
+      "options": {
+        "cwd": "${config:nekoPlugin.repoRoot}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "N.E.K.O: check -r instant_memo",
+      "type": "shell",
+      "command": "uv run neko-plugin check -r \"${workspaceFolder}\"",
+      "options": {
+        "cwd": "${config:nekoPlugin.repoRoot}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "N.E.K.O: build instant_memo",
+      "type": "shell",
+      "command": "uv run neko-plugin build \"${workspaceFolder}\"",
+      "options": {
+        "cwd": "${config:nekoPlugin.repoRoot}"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
